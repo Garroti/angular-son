@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <h1>Nossos empregados</h1>
+        <p appSalaryColor="valor"></p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Salario</th>
+                    <th>Bonus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeService.employees; let i=index;">
+                    <td>{{ employee.name }}</td>
+                    <td appSalaryColor="{{ employee.salary }}">{{ employee.salary }}</td>
+                    <!-- <td [style.color]="getSalaryColor(employee)">{{ employee.salary }}</td> -->
+                    <!-- <td [ngClass]="getSalaryColor(employee)">{{ employee.salary }}</td> -->
+                    <td>{{ employee.bonus }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-employee-new-modal></app-employee-new-modal>
